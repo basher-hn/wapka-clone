@@ -1,29 +1,88 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مشترك جديد</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="main">
-    <h2>مشترك جديد</h2>
-    <form>
-      <label>اسم المستخدم</label><br>
-      <input type="text" name="username"><br><br>
-      
-      <label>البريد الإلكتروني</label><br>
-      <input type="email" name="email"><br><br>
+<style>
+  form {
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 350px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Cairo', sans-serif;
+  }
 
-      <label>كلمة المرور</label><br>
-      <input type="password" name="password"><br><br>
+  form b {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 15px;
+  }
 
-      <label>تأكيد كلمة المرور</label><br>
-      <input type="password" name="confirm"><br><br>
+  .box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
 
-      <button type="submit">تسجيل</button>
-    </form>
-  </div>
-</body>
-</html>
+  .button {
+    background: linear-gradient(45deg, #1e88e5, #1565c0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .button:hover {
+    background: linear-gradient(45deg, #1565c0, #1e88e5);
+  }
+
+  #success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 15px auto;
+    width: 90%;
+    max-width: 350px;
+    display: none;
+  }
+</style>
+
+<div id="success-message">تم الإرسال بنجاح!</div>
+
+<form id="register-form" action="https://script.google.com/macros/s/AKfycby9Uq46DtQoxKkrDBC8l6VwT1-w7Fugb2wvm8H4Upa0XlhPRRqixIV5d7g5gN6nV-i7/exec" method="post">
+  <b>الاسم:</b>
+  <input type="text" name="name" class="box" required/>
+
+  <b>البريد الإلكتروني:</b>
+  <input type="email" name="email" class="box" required/>
+
+  <button type="submit" class="button">تسجيل</button>
+</form>
+
+<script>
+  const form = document.getElementById("register-form");
+  const msg = document.getElementById("success-message");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(() => {
+      msg.style.display = "block";
+      form.reset();
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 3000);
+    })
+    .catch(() => alert("حدث خطأ أثناء الإرسال"));
+  });
+</script>
