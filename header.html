@@ -1,52 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <title>منتديات احلى الأوقات</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* تأكد من أن القائمة منسدلة بشكل صحيح */
+    .menu-dropdown {
+      display: none;
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      right: 0;
+      top: 50px;
+      z-index: 999;
+    }
+    .menu-dropdown.open {
+      display: block;
+    }
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 10px;
+      background: #eee;
+    }
+    .icon-bar {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .icon-box {
+      margin: 0 10px;
+      font-size: 20px;
+    }
+    .icon {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
-<header class="site-header">
-  <div class="header-left">
-    <i class="fa fa-home icon"></i>
-  </div>
-
-  <div class="header-title">
-    منتديات احلى الأوقات
-  </div>
-
-  <div class="header-right">
-    <i class="fa fa-bars icon" id="menu-toggle"></i>
-    <div class="menu-dropdown" id="menu">
-      <a href="forums.html"><i class="fa fa-comments"></i> المنتديات</a>
-      <a href="files.html"><i class="fa fa-file"></i> الملفات</a>
-      <a href="chat.html"><i class="fa fa-comments"></i> الدردشة</a>
-      <a href="register.html"><i class="fa fa-user-plus"></i> حساب جديد</a>
-      <a href="login.html"><i class="fa fa-sign-in-alt"></i> تسجيل دخول</a>
-      <a href="logout.html"><i class="fa fa-sign-out-alt"></i> خروج</a>
+<body>
+  <header class="site-header">
+    <div class="header-left">
+      <i class="fa fa-home icon"></i>
     </div>
+
+    <div class="header-title">
+      منتديات احلى الأوقات
+    </div>
+
+    <div class="header-right">
+      <i class="fa fa-bars icon" id="menu-toggle"></i>
+      <div class="menu-dropdown" id="menu">
+        <a href="forums.html"><i class="fa fa-comments"></i> المنتديات</a><br>
+        <a href="files.html"><i class="fa fa-file"></i> الملفات</a><br>
+        <a href="chat.html"><i class="fa fa-comments"></i> الدردشة</a><br>
+        <a href="register.html"><i class="fa fa-user-plus"></i> حساب جديد</a><br>
+        <a href="login.html"><i class="fa fa-sign-in-alt"></i> تسجيل دخول</a><br>
+        <a href="logout.html"><i class="fa fa-sign-out-alt"></i> خروج</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="icon-bar">
+    <a href="profile.html" class="icon-box"><i class="fa fa-user"></i></a>
+    <a href="members.html" class="icon-box"><i class="fa fa-users"></i></a>
+    <a href="messages.html" class="icon-box"><i class="fa fa-envelope"></i></a>
+    <a href="files.html" class="icon-box"><i class="fa fa-image"></i></a>
   </div>
-</header>
 
-<div class="icon-bar">
-  <a href="profile.html" class="icon-box"><i class="fa fa-user"></i></a>
-  <a href="members.html" class="icon-box"><i class="fa fa-users"></i></a>
-  <a href="messages.html" class="icon-box"><i class="fa fa-envelope"></i></a>
-  <a href="files.html" class="icon-box"><i class="fa fa-image"></i></a>
-</div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
 
-<!-- السكربت يجب أن يكون هنا 👇 بعد تحميل كل العناصر -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+      toggle.onclick = function (e) {
+        e.stopPropagation();
+        menu.classList.toggle('open');
+      };
 
-    toggle.onclick = function () {
-      menu.classList.toggle('open');
-    };
-
-    document.addEventListener('click', function (e) {
-      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.remove('open');
-      }
+      document.addEventListener('click', function (e) {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+          menu.classList.remove('open');
+        }
+      });
     });
-  });
-</script>
+  </script>
+</body>
+</html>
