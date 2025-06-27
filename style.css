@@ -14,6 +14,7 @@ body {
   background: #245b66;
   color: #fff;
   padding: 10px 20px;
+  position: relative;
 }
 
 .header-left .icon,
@@ -25,21 +26,18 @@ body {
 
 .header-title {
   font-weight: bold;
-  font-size: 0.85em; /* أصغر من 1em */
+  font-size: 0.85em;
   text-align: center;
   flex: 1;
 }
 
 .header-left, .header-right {
-  flex: 0 0 auto; /* حجم ثابت */
+  flex: 0 0 auto;
 }
 
 /* القائمة المنسدلة */
-.header-right {
-  position: relative;
-}
-
 .menu-dropdown {
+  display: none; /* استبدل max-height بـ display */
   position: absolute;
   top: 45px;
   right: 0;
@@ -47,14 +45,11 @@ body {
   border: 1px solid #003344;
   border-radius: 4px;
   min-width: 160px;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.4s ease;
   z-index: 1000;
 }
 
 .menu-dropdown.open {
-  max-height: 500px;
+  display: block;
 }
 
 .menu-dropdown a {
