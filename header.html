@@ -38,22 +38,26 @@
     <a href="files.html" class="icon-box"><i class="fa fa-image"></i></a>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('menu');
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
 
-      toggle.onclick = function (e) {
-        e.stopPropagation();
-        menu.classList.toggle('open');
-      };
+    // عند الضغط على زر القائمة
+    toggle.onclick = function (e) {
+      e.stopPropagation(); // منع الانتقال للمستند
+      menu.classList.toggle('open'); // فتح أو غلق القائمة
+    };
 
-      document.addEventListener('click', function (e) {
-        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+    // عند الضغط في أي مكان خارج القائمة
+    document.addEventListener('click', function (e) {
+      setTimeout(function () {
+        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
           menu.classList.remove('open');
         }
-      });
+      }, 50); // تأخير قليل لمنع الإغلاق الفوري بعد الفتح
     });
-  </script>
+  });
+</script>
 </body>
 </html>
