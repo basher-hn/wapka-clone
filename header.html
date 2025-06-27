@@ -1,13 +1,12 @@
 <head>
-  <!-- خط أيقونات Font Awesome -->
+  <meta charset="UTF-8" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- رابط ملف التنسيقات الخاص بك -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <header class="site-header">
   <div class="header-left">
-    <a href="index.html"><i class="fa fa-home icon"></i></a>
+    <i class="fa fa-home icon"></i>
   </div>
 
   <div class="header-title">
@@ -28,7 +27,6 @@
   </div>
 </header>
 
-<!-- الأيقونات السفلية -->
 <div class="icon-bar">
   <a href="profile.html" class="icon-box"><i class="fa fa-user"></i></a>
   <a href="members.html" class="icon-box"><i class="fa fa-users"></i></a>
@@ -36,18 +34,20 @@
   <a href="gallery.html" class="icon-box"><i class="fa fa-image"></i></a>
 </div>
 
-<!-- سكربت القائمة -->
+<!-- السكربت يجب أن يكون هنا 👇 بعد تحميل كل العناصر -->
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
 
-  toggle.onclick = function() {
-    menu.classList.toggle('open');
-  };
+    toggle.onclick = function () {
+      menu.classList.toggle('open');
+    };
 
-  document.addEventListener('click', function(e) {
-    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-      menu.classList.remove('open');
-    }
+    document.addEventListener('click', function (e) {
+      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
   });
 </script>
