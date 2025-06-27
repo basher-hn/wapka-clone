@@ -25,9 +25,9 @@ body {
 
 .header-title {
   font-weight: bold;
-  font-size: 1em; /* تم التصغير */
+  font-size: 0.85em; /* أصغر من 1em */
   text-align: center;
-  flex: 1; /* يجعل العنوان يتمدد */
+  flex: 1;
 }
 
 .header-left, .header-right {
