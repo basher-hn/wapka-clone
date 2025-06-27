@@ -1,5 +1,5 @@
 <head>
-  <!-- رابط الأيقونات Font Awesome -->
+  <!-- خط أيقونات Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- رابط ملف التنسيقات الخاص بك -->
   <link rel="stylesheet" href="style.css">
@@ -7,13 +7,15 @@
 
 <header class="site-header">
   <div class="header-left">
-    <a href="#"><i class="fa fa-home"></i></a>
+    <a href="forums.html"><i class="fa fa-home icon"></i></a>
   </div>
+
   <div class="header-title">
     BASHER-HN.GITHUB.IO/WAPKA-CLONE
   </div>
+
   <div class="header-right">
-    <i class="fa fa-bars" id="menu-toggle"></i>
+    <i class="fa fa-bars icon" id="menu-toggle"></i>
     <div class="menu-dropdown" id="menu">
       <a href="forums.html"><i class="fa fa-comments"></i> المنتديات</a>
       <a href="files.html"><i class="fa fa-file"></i> الملفات</a>
@@ -26,21 +28,15 @@
   </div>
 </header>
 
+<!-- الأيقونات السفلية -->
 <div class="icon-bar">
-  <a href="profile.html" class="icon-box">
-    <i class="fa fa-user"></i>
-  </a>
-  <a href="members.html" class="icon-box">
-    <i class="fa fa-users"></i>
-  </a>
-  <a href="messages.html" class="icon-box">
-    <i class="fa fa-envelope"></i>
-  </a>
-  <a href="gallery.html" class="icon-box">
-    <i class="fa fa-image"></i>
-  </a>
+  <a href="profile.html" class="icon-box"><i class="fa fa-user"></i></a>
+  <a href="members.html" class="icon-box"><i class="fa fa-users"></i></a>
+  <a href="messages.html" class="icon-box"><i class="fa fa-envelope"></i></a>
+  <a href="gallery.html" class="icon-box"><i class="fa fa-image"></i></a>
 </div>
 
+<!-- سكربت القائمة -->
 <script>
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
