@@ -1,30 +1,34 @@
-<!-- header.html -->
-<header style="background: linear-gradient(90deg, #222, #444); color:#fff; padding:20px; text-align:center; font-family: Arial, sans-serif; border-bottom: 3px solid #00c3ff;">
-  <h1 style="margin:0; font-size:2em;">🌟 موقع بشير 🌟</h1>
-  <nav style="margin-top:15px;">
-    <a href="index.html" class="nav-btn">الرئيسية</a>
-    <a href="register.html" class="nav-btn">تسجيل</a>
-    <a href="login.html" class="nav-btn">دخول</a>
-  </nav>
+<header class="site-header">
+  <div class="header-left">
+    <img src="home-icon.png" alt="Home" class="icon">
+  </div>
+  <div class="header-title">
+    BASHER-HN.GITHUB.IO/WAPKA-CLONE
+  </div>
+  <div class="header-right">
+    <img src="menu-icon.png" alt="Menu" class="icon" id="menu-toggle">
+    <div class="menu-dropdown" id="menu">
+      <a href="forums.html">المنتديات</a>
+      <a href="files.html">الملفات</a>
+      <a href="chat.html">الدردشة</a>
+      <a href="about.html">من نحن</a>
+      <a href="register.html">حساب جديد</a>
+      <a href="login.html">تسجيل دخول</a>
+      <a href="logout.html">خروج</a>
+    </div>
+  </div>
 </header>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
 
-<style>
-  .nav-btn {
-    display: inline-block;
-    color: #fff;
-    background: #00c3ff;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  }
+  toggle.onclick = function() {
+    menu.classList.toggle('open');
+  };
 
-  .nav-btn:hover {
-    background: #00a6d6;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.3);
-  }
-</style>
+  document.addEventListener('click', function(e) {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
