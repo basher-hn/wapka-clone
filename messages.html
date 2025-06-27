@@ -1,52 +1,19 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الرسائل الخاصة</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .message-box {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      padding: 10px;
-      margin: 15px auto;
-      max-width: 500px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #eee;
-    }
-    .message-header {
-      font-weight: bold;
-      color: #1f2937;
-    }
-    .message-content {
-      margin-top: 5px;
-      font-size: 14px;
-      color: #444;
-    }
-    .message-time {
-      text-align: left;
-      font-size: 12px;
-      color: #888;
-    }
-  </style>
-</head>
-<body>
-  <div class="main">
-    <h2>📨 الرسائل الخاصة</h2>
+<div id="header"></div>
 
-    <div class="message-box">
-      <div class="message-header">🔔 من: مدير المنتدى</div>
-      <div class="message-content">مرحبًا بك يا بشير في موقعك الجديد. إذا احتجت أي مساعدة نحن هنا.</div>
-      <div class="message-time">قبل 1 ساعة</div>
-    </div>
+<!-- هنا محتوى الصفحة -->
 
-    <div class="message-box">
-      <div class="message-header">🧑 من: مستخدم جديد</div>
-      <div class="message-content">هل يمكنني معرفة كيف أرفع صورة للملف الشخصي؟</div>
-      <div class="message-time">قبل 3 ساعات</div>
-    </div>
+<div id="footer"></div>
 
-  </div>
-</body>
-</html>
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
