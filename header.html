@@ -1,24 +1,19 @@
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <!-- ملف الستايل الموحد -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- رابط الأيقونات Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- رابط ملف التنسيقات الخاص بك -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <header class="site-header">
   <div class="header-left">
-    <a href="index.html"><i class="fa fa-home icon"></i></a>
+    <a href="#"><i class="fa fa-home"></i></a>
   </div>
   <div class="header-title">
     BASHER-HN.GITHUB.IO/WAPKA-CLONE
   </div>
   <div class="header-right">
-    <i class="fa fa-bars icon" id="menu-toggle"></i>
+    <i class="fa fa-bars" id="menu-toggle"></i>
     <div class="menu-dropdown" id="menu">
       <a href="forums.html"><i class="fa fa-comments"></i> المنتديات</a>
       <a href="files.html"><i class="fa fa-file"></i> الملفات</a>
@@ -31,7 +26,6 @@
   </div>
 </header>
 
-<!-- شريط الأيقونات السفلي -->
 <div class="icon-bar">
   <a href="profile.html" class="icon-box">
     <i class="fa fa-user"></i>
@@ -47,18 +41,17 @@
   </a>
 </div>
 
-<!-- سكريبت القائمة -->
 <script>
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
 
-  toggle.onclick = function () {
-    menu.classList.toggle("open");
+  toggle.onclick = function() {
+    menu.classList.toggle('open');
   };
 
-  document.addEventListener("click", function (e) {
+  document.addEventListener('click', function(e) {
     if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-      menu.classList.remove("open");
+      menu.classList.remove('open');
     }
   });
 </script>
