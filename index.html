@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <title>نسخة Wapka تجريبية</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="header">
-    <h1>نسخة Wapka تجريبية</h1>
-    <nav>
-      <nav>
-  <a href="index.html">الرئيسية</a>
-  <a href="dashboard.html">لوحة التحكم</a>
-  <a href="login.html">تسجيل الدخول</a>
-  <a href="register.html">تسجيل عضوية</a>
-      </nav>
-    </nav>
-  </div>
+<div id="header"></div>
 
-  <div class="main">
-    <p>✔ تم تحميل الصفحة بنجاح!</p>
-  </div>
+<!-- هنا محتوى الصفحة -->
 
-  <footer class="footer">
-    جميع الحقوق محفوظة © 2025
-  </footer>
-</body>
-</html>
+<div id="footer"></div>
+
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
