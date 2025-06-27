@@ -1,10 +1,18 @@
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- ملف الستايل الموحد -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <header class="site-header">
   <div class="header-left">
-    <i class="fa fa-home icon"></i>
+    <a href="index.html"><i class="fa fa-home icon"></i></a>
   </div>
   <div class="header-title">
     BASHER-HN.GITHUB.IO/WAPKA-CLONE
@@ -23,6 +31,7 @@
   </div>
 </header>
 
+<!-- شريط الأيقونات السفلي -->
 <div class="icon-bar">
   <a href="profile.html" class="icon-box">
     <i class="fa fa-user"></i>
@@ -38,17 +47,18 @@
   </a>
 </div>
 
+<!-- سكريبت القائمة -->
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
 
-  toggle.onclick = function() {
-    menu.classList.toggle('open');
+  toggle.onclick = function () {
+    menu.classList.toggle("open");
   };
 
-  document.addEventListener('click', function(e) {
+  document.addEventListener("click", function (e) {
     if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-      menu.classList.remove('open');
+      menu.classList.remove("open");
     }
   });
 </script>
